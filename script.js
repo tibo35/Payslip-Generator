@@ -53,6 +53,8 @@ superAmountOutput.innerHTML = Math.floor(y);
 //Gross Income and super
 
 let getNetIncome = () => {
+let incomeTaxes = document.getElementById('output-incomeTaxes');
+let netIncome = document.getElementById('output-netIncome');
 const intervals = [
     [0, 18200, 0],
     [18200, 37000, 0.19],
@@ -61,7 +63,7 @@ const intervals = [
 ]
 const income = annualSalaryInput.value;
 let totalTaxes = 0;
-let netIncome = income - totalTaxes;
+let IncomeAfterTaxes = income - totalTaxes;
 
 for(const interval of intervals){
 if(income < interval[1]){
@@ -73,8 +75,8 @@ if(income < interval[1]){
 }
 
 };
-console.log(totalTaxes)
-console.log(netIncome)
+incomeTaxes.innerHTML = Math.ceil(totalTaxes/12);
+netIncome.innerHTML = IncomeAfterTaxes;
 }
 
 // Handle Submit

@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
+    <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
+    
 </head>
 
 <body>
@@ -25,29 +27,29 @@
             <input type="number" id="super" name="super" placeholder='Superannuation Rate'>
         </div>
         <div>
-
+            <label for="endDate">Payment End Date</label>
             <input type="Date" id="startDate" value="">
 
         </div>
         <div>
             <label for="endDate">Payment End Date</label>
             <input type="Date" id="endDate" name="endDate">
-
         </div>
         <input type="button" id="submit-btn" value='submit'></input>
     </form>
     <div>
-        <p id="output-firstname"></p>
-        <p id="output-surname"></p>
+        <div id="payslip-name" class="name">Name
+            <p id="output-firstname"></p>
+            <p id="output-surname"></p>
+        </div>
+
         <p id="output-startDate"></p>
         <p id="output-endDate"></p>
-        <p id="output-groosSalary"></p>
-        <p id="output-superAmount"></p>
-        <p id="output-netIncome"></p>
-        <p id="output-incomeTax"></p>
-
+        <p id="output-groosSalary">Gross Income:</p>
+        <p id="output-superAmount">Superannuation</p>
+        <p id="output-netIncome">Net Income</p>
+        <p id="output-incomeTaxes">Income Tax:</p>
     </div>
-
 </body>
 
 </html>
