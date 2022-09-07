@@ -13,13 +13,13 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
+    width: 600px;
     background: white;
     border-radius: 20px;
 }
 .center h1{
    text-align: center; 
-   padding: 0 0 20px 0;
+   padding: 0 0 25px 0;
    border-bottom: 1px solid silver;
    font-size: 40px;
 }
@@ -62,12 +62,13 @@ transition: .5s;
     background-color: #2691d9;
     transition: .5s;
 }
-.text_field input:focus~label,
+.text_field input:hover~label,
 .text_field input:valid~label{
   top: -5px;
   color : #2691d9;
+  font-size: 1rem;
 }
-.text_field input:focus~span::before,
+.text_field input:hover~span::before,
 .text_field input:valid~span::before{
   width: 100%;
 }
@@ -89,5 +90,63 @@ transition: .5s;
     border-color: #2691d9;
     transition: .5s;
   }
- 
+  input[type="date"]::before { 
+	content: attr(data-placeholder);
+	width: 100%;
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
+
+/* Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 25%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  opacity: 0.95;
+}
+
+/* Modal Content */
+.modal-content {
+  
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container-data p, h3 {
+    display: inline-flex;
+    text-align: center;
+   
+}
+
+.title{
+    font-weight: bolder;
+    font-size: 20px;
+}
   

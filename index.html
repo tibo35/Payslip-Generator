@@ -10,6 +10,7 @@
     <script defer src="script.js"></script>
 
 </head>
+
 <body>
     <div class="center">
         <h1>Generate Payslip</h1>
@@ -36,31 +37,54 @@
                 <label>Your Superannuation rate %</label>
             </div>
             <div class="text_field">
+                <input type="Date" id="startDate" required>
                 <label>Payment Start Date</label>
-                <input type="Date" class='datepicker-toogle-button' id="startDate" required>
                 <span></span>
             </div>
             <div class="text_field">
-                <label>Payment End Date</label>
                 <input type="Date" id="endDate" required>
+                <label>Payment End Date</label>
                 <span></span>
             </div>
-            <input type="button" id="submit-btn" value='submit'></input>  
+            <input type="button" id="submit-btn" value='submit'></input>
     </div>
-    <div>
-        <div id="payslip-name" class="name">Name
-            <p id="output-firstname"></p>
-            <p id="output-surname"></p>
+    </form>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="container-data">
+                <h3>Employee Name:</h3>
+                <p id="output-firstname"></p>
+                <p id="output-surname"></p>
+            </div>
+            <div class="container-data">
+                <h3>Period:</h3>
+                <h3>From the</h3>
+                <p id="output-startDate"></p>
+                <h3>To the</h3>
+                <p id="output-endDate"></p>
+            </div>
+            <div class="container-data">
+                <h3>Gross Income:</h3>
+                <p id="output-groosSalary"></p>
+            </div>
+            <div class="container-data">
+                <h3>Superannuation</h3>
+                <p id="output-superAmount"></p>
+            </div>
+            <div class="container-data">
+                <h3>Net Income</h3>
+                <p id="output-netIncome"></p>
+            </div>
+            <div class="container-data">
+                <h3>Income Tax:</h3>
+                <p id="output-incomeTaxes"></p>
+            </div>
+
         </div>
     </div>
-</form>
 
-    <p id="output-startDate"></p>
-    <p id="output-endDate"></p>
-    <p id="output-groosSalary">Gross Income:</p>
-    <p id="output-superAmount">Superannuation</p>
-    <p id="output-netIncome">Net Income</p>
-    <p id="output-incomeTaxes">Income Tax:</p>
     </div>
 </body>
 

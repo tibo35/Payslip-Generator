@@ -8,21 +8,20 @@ const endDate = document.getElementById('endDate');
 const button = document.getElementById('submit-btn')
 const form = document.getElementById('form');
 const errorElement = document.getElementById('error');
-
-
-
-
+const modal = document.getElementById('myModal');
+var span = document.getElementsByClassName("close")[0];
 
 // Get and Display Firstname and last name
-function renderUserdetails (){
+let renderUserdetails = () => {
     let firstnameResult = document.getElementById('output-firstname');
     let surnameResult = document.getElementById('output-surname');
 
     firstnameResult.innerHTML = firstname.value;
     surnameResult.innerHTML = surname.value;
 }
+
 //Get and Display Dates
-function formatDate() {
+let formatDate = () => {
     let start = document.getElementById('output-startDate');
     let end = document.getElementById('output-endDate');
 
@@ -48,10 +47,7 @@ let y = (z/100) * x;
 superAmountOutput.innerHTML = Math.floor(y);
 }
 
-
-
 //Gross Income and super
-
 let getNetIncome = () => {
 let incomeTaxes = document.getElementById('output-incomeTaxes');
 let netIncome = document.getElementById('output-netIncome');
@@ -63,7 +59,7 @@ const intervals = [
 ]
 const income = annualSalaryInput.value;
 let totalTaxes = 0;
-let IncomeAfterTaxes = income - totalTaxes;
+let IncomeAfterTaxes = 0;
 
 for(const interval of intervals){
 if(income < interval[1]){
@@ -73,17 +69,28 @@ if(income < interval[1]){
 } else {
     totalTaxes += (interval[1] - interval[0])* interval[2];
 }
-
+IncomeAfterTaxes = (income - totalTaxes)/12;
 };
+console.log(totalTaxes)
 incomeTaxes.innerHTML = Math.ceil(totalTaxes/12);
 netIncome.innerHTML = IncomeAfterTaxes;
 }
 
 // Handle Submit
 button.addEventListener('click', () => {
+    modal.style.display = "block";
     formatDate();
     renderUserdetails();
     getMonthlyGross()
     getSuperRate()
     getNetIncome()
 });
+span.onclick = function() {
+    modal.style.display = "none";
+  }
+  // When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
