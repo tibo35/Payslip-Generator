@@ -6,49 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel='stylesheet' type='text/css' href='style.css'>
     <script defer src="script.js"></script>
-    
+
 </head>
-
 <body>
-    <div id="error"></div>
-    <form action="/" method="GET">
-        <div>
-            <input type="text" id="firstname" name="firstname" placeholder='firstname'>
-        </div>
-        <div>
-            <input type="text" id="surname" name="surname" placeholder='surname'>
-        </div>
-        <div>
-            <input type="number" id="annualSalary" name="annualSalary" placeholder='Annual Salary'>
-        </div>
-        <div>
-            <input type="number" id="super" name="super" placeholder='Superannuation Rate'>
-        </div>
-        <div>
-            <label for="endDate">Payment End Date</label>
-            <input type="Date" id="startDate" value="">
-
-        </div>
-        <div>
-            <label for="endDate">Payment End Date</label>
-            <input type="Date" id="endDate" name="endDate">
-        </div>
-        <input type="button" id="submit-btn" value='submit'></input>
-    </form>
+    <div class="center">
+        <h1>Generate Payslip</h1>
+        <form action="/" method="GET">
+            <h2>Please Enter your details</h2>
+            <div class="text_field">
+                <input type="text" id="firstname" required>
+                <span></span>
+                <label>Your Firstname</label>
+            </div>
+            <div class="text_field">
+                <input type="text" id="surname" required>
+                <span></span>
+                <label>Your Lastname</label>
+            </div>
+            <div class="text_field">
+                <input type="number" id="annualSalary" required>
+                <span></span>
+                <label>Your annual Salary $</label>
+            </div>
+            <div class="text_field">
+                <input type="number" id="super" required>
+                <span></span>
+                <label>Your Superannuation rate %</label>
+            </div>
+            <div class="text_field">
+                <label>Payment Start Date</label>
+                <input type="Date" class='datepicker-toogle-button' id="startDate" required>
+                <span></span>
+            </div>
+            <div class="text_field">
+                <label>Payment End Date</label>
+                <input type="Date" id="endDate" required>
+                <span></span>
+            </div>
+            <input type="button" id="submit-btn" value='submit'></input>  
+    </div>
     <div>
         <div id="payslip-name" class="name">Name
             <p id="output-firstname"></p>
             <p id="output-surname"></p>
         </div>
+    </div>
+</form>
 
-        <p id="output-startDate"></p>
-        <p id="output-endDate"></p>
-        <p id="output-groosSalary">Gross Income:</p>
-        <p id="output-superAmount">Superannuation</p>
-        <p id="output-netIncome">Net Income</p>
-        <p id="output-incomeTaxes">Income Tax:</p>
+    <p id="output-startDate"></p>
+    <p id="output-endDate"></p>
+    <p id="output-groosSalary">Gross Income:</p>
+    <p id="output-superAmount">Superannuation</p>
+    <p id="output-netIncome">Net Income</p>
+    <p id="output-incomeTaxes">Income Tax:</p>
     </div>
 </body>
 
